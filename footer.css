@@ -1,0 +1,142 @@
+/* Reset specific footer styles to prevent inheritance */
+.footer-container {
+    background-color: #c4c4c4;
+    color: black;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.footer-container * {
+    box-sizing: border-box;
+}
+
+/* Override any inherited animations */
+.footer-container,
+.footer-container * {
+    animation: none;
+}
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    max-width: 1200px;
+    width: 100%;
+    padding: 0 15px;
+}
+
+/* Reset footer text styles */
+.footer p,
+.footer-logo-text {
+    color: #000000 !important;
+    font-size: 17px !important;
+    margin: 5px 0 !important;
+    animation: none !important;
+    font-weight: normal !important;
+    text-align: left !important;
+    padding: 0 !important;
+    line-height: 1.5 !important;
+}
+
+.footer-left,
+.footer-right {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 0;
+}
+
+.footer-logo {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 10px;
+}
+
+.footer-logo img {
+    width: auto;
+    height: 100px;
+    max-width: 100%;
+}
+
+.footer-logo-text {
+    margin-top: 15px !important;
+    margin-bottom: 15px !important;
+}
+
+.social-icons {
+    display: flex;
+    margin-top: 15px;  /* Increased margin-top for better spacing */
+    justify-content: flex-start;
+    gap: 15px;  /* Increased gap between icons */
+}
+
+.social-icons a {
+    text-decoration: none;
+    margin-right: 15px;  /* Increased margin between links */
+}
+
+.social-icons img {
+    width: 30px;  /* Increased from 20px to 30px */
+    height: 30px;  /* Increased from 20px to 30px */
+    transition: transform 0.3s ease;
+}
+
+.social-icons img:hover {
+    transform: scale(1.1);
+}
+
+.contact-info {
+    font-size: 17px !important;
+    color: #0a0a0a !important;
+}
+
+.contact-info p {
+    margin: 8px 0 !important;
+}
+
+.copyright {
+    text-align: center;
+    font-size: 16px !important;
+    color: #666 !important;
+    margin-top: 20px;
+    padding: 10px 0;
+    width: 100%;
+    background-color: #c4c4c4;
+}
+
+/* Media Queries */
+@media (min-width: 600px) {
+    .footer {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    .footer-left,
+    .footer-right {
+        width: 45%;
+        margin-bottom: 0;
+    }
+    
+    .contact-info {
+        margin-top: 100px;
+    }
+}
+
+@media (max-width: 599px) {
+    .footer {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .footer-left,
+    .footer-right {
+        width: 100%;
+    }
+
+    .contact-info {
+        margin-top: 10px;
+    }
+}
