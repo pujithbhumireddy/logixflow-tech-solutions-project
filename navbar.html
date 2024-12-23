@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="navbar.css">
+    <title>Responsive Navbar</title>
 </head>
 <body>
     <nav class="navbar">
@@ -15,7 +16,7 @@
             <span class="bar"></span>
             <span class="bar"></span>
         </div>
-        <ul class="navbar-links">
+        <ul class="navbar-links" id="navbar-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="#">About</a></li>
             <li class="dropdown">
@@ -33,10 +34,11 @@
 
     <script>
         const mobileMenu = document.getElementById('mobile-menu');
-        const navbarLinks = document.querySelector('.navbar-links');
+        const navbarLinks = document.getElementById('navbar-links');
 
         mobileMenu.addEventListener('click', () => {
             navbarLinks.classList.toggle('active');
+            mobileMenu.classList.toggle('open');
         });
     </script>
 </body>
