@@ -32,30 +32,47 @@ body {
     background-color: rgba(0, 0, 0, 0.6);
     display: flex;
     align-items: center;
-    padding-left: 4rem;
+    padding: 0 2rem;
+    justify-content: center;
 }
 
 .hero-section h1 {
     color: #ffffff;
-    font-size: 4.5rem;
-    margin-left: 175px;
+    font-size: 4rem;
     animation: slideIn 1s ease-out;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    text-align: center;
 }
 
 .intro-section {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 4rem;
-    margin: 0 300px;
+    padding: 2rem;
+    margin: 0 1rem;
     animation: fadeIn 1s ease-out;
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .intro-section {
+        flex-direction: row;
+        text-align: left;
+        margin: 0 3rem;
+    }
 }
 
 .intro-text {
     flex: 1;
     padding: 2rem;
-    margin-right: 3rem;
+    margin-right: 0;
+}
+
+@media (min-width: 768px) {
+    .intro-text {
+        margin-right: 3rem;
+    }
 }
 
 .intro-text strong {
@@ -74,10 +91,18 @@ body {
 .intro-image {
     flex: 0 0 300px;
     padding: 1rem;
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .intro-image {
+        display: block;
+    }
 }
 
 .intro-image img {
-    height: 450px;
+    width: 100%;
+    height: auto;
     border-radius: 10px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease;
@@ -89,7 +114,7 @@ body {
 
 .work-environment-section {
     position: relative;
-    padding: 6rem;
+    padding: 6rem 2rem;
     background: url('resources/workenv.jpg') no-repeat center center;
     background-size: cover;
     margin: 4rem 0;
@@ -104,7 +129,7 @@ body {
 
 .work-environment-overlay {
     color: #ffffff;
-    padding: 3rem;
+    padding: 3rem 1rem;
     text-align: center;
     max-width: 900px;
     margin: 0 auto;
@@ -130,18 +155,26 @@ body {
 }
 
 .container {
-    width: 70%;
+    width: 90%;
     margin: 4rem auto;
     background-color: #ffffff;
-    padding: 3rem;
+    padding: 3rem 1rem;
     border-radius: 15px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+@media (min-width: 768px) {
+    .container {
+        width: 70%;
+        padding: 3rem;
+    }
 }
 
 .job-listing h2 {
     color: #1a237e;
     font-size: 2.2rem;
     margin-bottom: 2rem;
+    text-align: center;
 }
 
 .job {
@@ -182,25 +215,8 @@ button:hover {
 }
 
 @media (max-width: 768px) {
-    .intro-section {
-        flex-direction: column;
-        margin: 0 1rem;
-    }
-
-    .intro-image {
-        display: none;
-    }
-
-    .intro-text {
-        margin-right: 0;
-    }
-
-    .container {
-        width: 90%;
-    }
-
     .hero-section h1 {
         font-size: 3rem;
-        margin-left: 1rem;
+        margin-left: 0;
     }
 }
