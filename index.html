@@ -226,30 +226,6 @@
   <!-- Placeholder for the footer -->
   <div id="footer-placeholder"></div>
 
-  <script>
-    // Function to include the navbar HTML
-    function includeNavbar() {
-      const navbarPlaceholder = document.getElementById("navbar-placeholder");
-      fetch("navbar.html")
-        .then(response => response.text())
-        .then(data => {
-          navbarPlaceholder.innerHTML = data;
-        });
-    }
-
-    // Function to include the footer HTML
-    function includeFooter() {
-      const footerPlaceholder = document.getElementById("footer-placeholder");
-      fetch("footer.html")
-        .then(response => response.text())
-        .then(data => {
-          footerPlaceholder.innerHTML = data;
-        });
-    }
-
-    // Call the functions to include the navbar and footer
-    includeNavbar();
-    includeFooter();
-  </script>
+  <script src="index.js"></script>
 </body>
 </html>
