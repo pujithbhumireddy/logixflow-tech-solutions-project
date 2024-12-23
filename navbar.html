@@ -16,7 +16,7 @@
             <span class="bar"></span>
             <span class="bar"></span>
         </div>
-        <ul class="navbar-links" id="navbar-links">
+        <ul class="navbar-menu">
             <li><a href="index.html">Home</a></li>
             <li><a href="#">About</a></li>
             <li class="dropdown">
@@ -31,15 +31,6 @@
             <li><a href="#">Contact</a></li>
         </ul>
     </nav>
-
-    <script>
-        const mobileMenu = document.getElementById('mobile-menu');
-        const navbarLinks = document.getElementById('navbar-links');
-
-        mobileMenu.addEventListener('click', () => {
-            navbarLinks.classList.toggle('active');
-            mobileMenu.classList.toggle('open');
-        });
-    </script>
+    <script src="navbar.js"></script>
 </body>
 </html>
