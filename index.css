@@ -1,3 +1,9 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     font-family: Arial, sans-serif;
     background-color: #f0f2f5;
@@ -32,13 +38,13 @@ body::-webkit-scrollbar {
     position: relative;
     z-index: 2; /* Increased z-index to ensure content is above overlay */
     padding: 20px;
-    width: 60%; /* Adjust width to fit content in fewer lines */
-    margin-left: 40px;
+    width: clamp(90%, 60%, 70%); /* Adjust width to fit content in fewer lines */
+    margin-left: clamp(0, 5%, 40px);
     animation: fadeIn 2s ease-in-out;
 }
 
 h1 {
-    font-size: 2.5rem; /* Adjust font size */
+    font-size: clamp(2rem, 5vw, 2.5rem); /* Adjust font size */
     margin-bottom: 0.5rem; /* Adjust margin */
     font-weight: bold;
     color: #1E90FF;
@@ -46,7 +52,7 @@ h1 {
 }
 
 p {
-    font-size: 1rem; /* Adjust font size */
+    font-size: clamp(1rem, 2.5vw, 1.125rem); /* Adjust font size */
     line-height: 1.5; /* Adjust line height */
     margin-bottom: 1rem; /* Adjust margin */
     max-width: 100%;
@@ -247,7 +253,6 @@ p {
 
 .about-us-text ul li {
     font-size: 1rem;
-    /* margin-bottom: 10px; */
     display: flex;
     align-items: center;
     color: #555;
@@ -494,6 +499,16 @@ p {
         width: 80px;
         height: 50px;
     }
+
+    .cursors {
+        padding: 10px;
+        gap: 10px;
+    }
+
+    .cursor {
+        padding: 15px;
+        max-width: 100%;
+    }
 }
 
 @media (max-width: 480px) {
@@ -506,6 +521,8 @@ p {
 
     .cursor {
         flex: 1 1 100%;
+        padding: 10px;
+        max-width: 100%;
     }
 
     h1 {
@@ -537,6 +554,15 @@ p {
     .carousel-track img {
         width: 70px;
         height: 40px;
+    }
+
+    .cursors {
+        padding: 5px;
+        gap: 5px;
+    }
+
+    .cursor {
+        padding: 10px;
     }
 }
 

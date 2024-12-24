@@ -1,5 +1,5 @@
 /* Navbar */
-.navbar {
+.navbar-custom {
     background-color: white;
     position: fixed;
     top: 0;
@@ -14,13 +14,13 @@
     z-index: 1000;
 }
 
-.navbar-brand img {
+.navbar-brand-custom img {
     height: 50px;
     width: auto;
 }
 
 /* Navbar Toggle (Hamburger Menu) */
-.navbar-toggle {
+.navbar-toggle-custom {
     display: none;
     background: none;
     border: none;
@@ -29,7 +29,7 @@
     z-index: 1001;
 }
 
-.bar {
+.bar-custom {
     display: block;
     width: 25px;
     height: 3px;
@@ -39,34 +39,34 @@
 }
 
 /* Navbar Menu */
-.nav-menu {
+.nav-menu-custom {
     display: flex;
     align-items: center;
 }
 
-.nav-list {
+.nav-list-custom {
     display: flex;
     list-style: none;
     gap: 2rem;
 }
 
-.nav-list a {
+.nav-list-custom a {
     color: #000;
     text-decoration: none;
     font-size: 1.2rem;
     transition: color 0.3s ease;
 }
 
-.nav-list a:hover {
+.nav-list-custom a:hover {
     color: #007bff;
 }
 
 /* Dropdown styles */
-.nav-item-dropdown {
+.nav-item-dropdown-custom {
     position: relative;
 }
 
-.dropdown-menu {
+.dropdown-menu-custom {
     display: none;
     position: absolute;
     top: 100%;
@@ -79,35 +79,35 @@
     z-index: 1001;
 }
 
-.nav-item-dropdown:hover .dropdown-menu {
+.nav-item-dropdown-custom:hover .dropdown-menu-custom {
     display: block;
 }
 
-.dropdown-menu a {
+.dropdown-menu-custom a {
     display: block;
     padding: 0.75rem 1rem;
 }
 
-.dropdown-menu a:hover {
+.dropdown-menu-custom a:hover {
     background-color: #f8f9fa;
 }
 
 /* Mobile Styles */
 @media screen and (max-width: 768px) {
-    .navbar {
+    .navbar-custom {
         padding: 0 1rem;
     }
 
-    .navbar-brand {
+    .navbar-brand-custom {
         flex: 1;
     }
 
-    .navbar-toggle {
+    .navbar-toggle-custom {
         display: block;
         z-index: 1002;
     }
 
-    .nav-menu {
+    .nav-menu-custom {
         position: fixed;
         left: -100%;
         top: 70px;
@@ -121,47 +121,47 @@
         z-index: 1001;
     }
 
-    .nav-menu.active {
+    .nav-menu-custom.active {
         left: 0;
     }
 
-    .nav-list {
+    .nav-list-custom {
         flex-direction: column;
         gap: 0;
         width: 100%;
     }
 
-    .nav-list li {
+    .nav-list-custom li {
         width: 100%;
     }
 
-    .nav-list a {
+    .nav-list-custom a {
         display: block;
         padding: 1rem 2rem;
         font-size: 1.1rem;
     }
 
-    .dropdown-menu {
+    .dropdown-menu-custom {
         position: static;
         display: none;
         box-shadow: none;
         padding-left: 2rem;
     }
 
-    .nav-item-dropdown.active .dropdown-menu {
+    .nav-item-dropdown-custom.active .dropdown-menu-custom {
         display: block;
     }
 
     /* Hamburger animation */
-    .navbar-toggle.active .bar:nth-child(2) {
+    .navbar-toggle-custom.active .bar-custom:nth-child(2) {
         opacity: 0;
     }
 
-    .navbar-toggle.active .bar:nth-child(1) {
+    .navbar-toggle-custom.active .bar-custom:nth-child(1) {
         transform: translateY(8px) rotate(45deg);
     }
 
-    .navbar-toggle.active .bar:nth-child(3) {
+    .navbar-toggle-custom.active .bar-custom:nth-child(3) {
         transform: translateY(-8px) rotate(-45deg);
     }
 }

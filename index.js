@@ -1,15 +1,16 @@
 document.addEventListener("DOMContentLoaded", function () {
 
   // Function to include the navbar HTML
-function includeNavbar() {
-  const navbarPlaceholder = document.getElementById("navbar-placeholder");
-  fetch("navbar.html")
-    .then(response => response.text())
-    .then(data => {
-      navbarPlaceholder.innerHTML = data;
-    })
-    .catch(error => console.error("Error loading navbar:", error));
-}
+// function includeNavbar() {
+//   const navbarPlaceholder = document.getElementById("navbar-placeholder");
+//   fetch("navbar.html")
+//     .then(response => response.text())
+//     .then(data => {
+//       navbarPlaceholder.innerHTML = data;
+//     })
+//     .catch(error => console.error("Error loading navbar:", error));
+// }
+
 
 // Function to include the footer HTML
 function includeFooter() {
