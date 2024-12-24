@@ -2,7 +2,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     const mobileMenu = document.getElementById('mobile-menu');
     const navMenu = document.getElementById('nav-menu');
-    const dropdownItems = document.querySelectorAll('.nav-item-dropdown');
+    const dropdownItems = document.querySelectorAll('.nav-item-dropdown-custom');
 
     // Toggle mobile menu
     mobileMenu.addEventListener('click', function() {
@@ -43,4 +43,11 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }
     });
+
+    function toggleMenu() {
+        const menu = document.querySelector('.nav-menu-custom');
+        const toggle = document.querySelector('.navbar-toggle-custom');
+        menu.classList.toggle('active');
+        toggle.classList.toggle('active');
+    }
 });
