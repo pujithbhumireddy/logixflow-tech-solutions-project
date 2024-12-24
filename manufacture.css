@@ -78,6 +78,161 @@ body {
     100% { transform: translateX(calc(-200px * 6 - 20px * 6)); }
 }
 
+/* Machine Section Styles */
+.machine-section {
+    padding: 4rem 2rem;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.section-title {
+    text-align: center;
+    color: #ff6600;
+    font-size: 2.5em;
+    margin-bottom: 3rem;
+    opacity: 0;
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+.machine-cards {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.machine-card {
+    flex: 1;
+    min-width: 300px;
+    max-width: 400px;
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0;
+    animation: fadeInUp 0.8s ease forwards;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.machine-card:nth-child(1) { animation-delay: 0.2s; }
+.machine-card:nth-child(2) { animation-delay: 0.4s; }
+.machine-card:nth-child(3) { animation-delay: 0.6s; }
+.machine-card:nth-child(4) { animation-delay: 0.8s; }
+
+.machine-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+.machine-images {
+    position: relative;
+    height: 300px; /* Fixed height for the image container */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f8f9fa;
+    overflow: hidden;
+}
+
+.machine-images img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Ensures the entire image is visible without cropping */
+    opacity: 0; /* Hidden by default */
+    transition: opacity 1s ease-in-out;
+}
+
+.machine-images img.primary-image {
+    animation: fadeImage 10s infinite;
+}
+
+.machine-images img.secondary-image {
+    animation: fadeImage 10s infinite 2s; /* Delayed to alternate */
+}
+
+.machine-images img.tertiary-image {
+    animation: fadeImage 10s infinite 4s; /* Delayed to alternate */
+}
+
+.machine-images img.quaternary-image {
+    animation: fadeImage 10s infinite 6s; /* Delayed to alternate */
+}
+
+.machine-images img.quinary-image {
+    animation: fadeImage 10s infinite 8s; /* Delayed to alternate */
+}
+
+@keyframes fadeImage {
+    0%, 20% {
+        opacity: 1;
+    }
+    20.01%, 100% {
+        opacity: 0;
+    }
+}
+
+.machine-info {
+    padding: 1.5rem;
+}
+
+.machine-info h3 {
+    color: #ff6600;
+    font-size: 1.4em;
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.machine-info h3::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background: #ff6600;
+    transition: width 0.3s ease;
+}
+
+.machine-card:hover .machine-info h3::after {
+    width: 100px;
+}
+
+.machine-info ul {
+    list-style: none;
+    padding: 0;
+}
+
+.machine-info li {
+    margin-bottom: 0.8rem;
+    padding-left: 1.5rem;
+    position: relative;
+    color: #666;
+}
+
+.machine-info li::before {
+    content: '•';
+    color: #ff6600;
+    position: absolute;
+    left: 0;
+    font-size: 1.2em;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 /* Filter Element Section */
 .filter-element-section {
     max-width: 1200px;
@@ -160,6 +315,15 @@ body {
     .filter-diagram {
         max-width: 100%;
     }
+
+    .machine-images {
+        min-height: 300px;
+        max-height: 350px;
+    }
+
+    .machine-images img {
+        max-height: 350px;
+    }
 }
 
 @media (max-width: 768px) {
@@ -171,6 +335,28 @@ body {
         width: 150px;
         height: 120px;
     }
+
+    .machine-section {
+        padding: 3rem 1rem;
+    }
+    
+    .section-title {
+        font-size: 2em;
+    }
+    
+    .machine-card {
+        min-width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    .machine-images {
+        min-height: 200px;
+        max-height: 300px;
+    }
+
+    .machine-images img {
+        max-height: 300px;
+    }
 }
 
 @media (max-width: 576px) {
@@ -180,5 +366,22 @@ body {
 
     .filter-element-section {
         padding: 20px 15px;
+    }
+
+    .machine-section {
+        padding: 2rem 1rem;
+    }
+    
+    .section-title {
+        font-size: 1.8em;
+    }
+    
+    .machine-images {
+        min-height: 180px;
+        max-height: 250px;
+    }
+
+    .machine-images img {
+        max-height: 250px;
     }
 }

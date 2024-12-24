@@ -119,6 +119,13 @@ body {
     line-height: 1.8;
 }
 
+/* New styles for contact info - now red for all devices */
+.work-environment-overlay p.contact-info strong {
+    color: #ff3c00;
+    font-size: clamp(1.2rem, 4vw, 2rem);
+    line-height: 1.5;
+}
+
 .container {
     width: clamp(95%, 70vw, 1200px);
     margin: 4rem auto;
@@ -165,6 +172,7 @@ button {
 @media (max-width: 768px) {
     .intro-section {
         flex-direction: column;
+        padding: 1rem;
     }
 
     .intro-image {
@@ -183,17 +191,33 @@ button {
     .hero-section h1 {
         margin-left: 0;
     }
+
+    .container {
+        width: 95%;
+        padding: 1rem;
+    }
+
+    button {
+        width: 100%;
+        max-width: 300px;
+        margin-top: 1rem;
+    }
 }
 
 @media (max-width: 480px) {
-    .work-environment-overlay p.contact-info {
-        padding: 0 1rem;
-        text-align: center;
+    .hero-section {
+        height: 50vh;
     }
 
-    .work-environment-overlay p.contact-info strong {
-        font-size: clamp(1.2rem, 4vw, 2rem);
-        line-height: 1.5;
-        color: #fd0000;
+    .work-environment-overlay p.contact-info {
+        padding: 0 1rem;
+    }
+
+    .job {
+        padding: 1rem;
+    }
+
+    .hero-section h1 {
+        font-size: clamp(1.8rem, 5vw, 2.5rem);
     }
 }
