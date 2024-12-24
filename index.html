@@ -208,31 +208,7 @@
     <!-- Placeholder for the footer -->
     <div id="footer-placeholder"></div>
 
-    <script src="index.js"></script>
     <script src="navbar.js"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const options = {
-                root: null,
-                rootMargin: "0px",
-                threshold: 0.1,
-            };
-
-            const observer = new IntersectionObserver((entries, observer) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add("in-view");
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, options);
-
-            const elements = document.querySelectorAll(".animate-on-scroll");
-            elements.forEach((el) => {
-                observer.observe(el);
-            });
-        });
-    </script>
-
+    <script src="index.js"></script>
 </body>
 </html>
