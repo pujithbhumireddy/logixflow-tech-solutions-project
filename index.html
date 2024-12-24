@@ -208,7 +208,16 @@
     <!-- Placeholder for the footer -->
     <div id="footer-placeholder"></div>
 
-    <script src="navbar.js"></script>
+    <!-- <script src="navbar.js"></script> -->
     <script src="index.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+          fetch('navbar.html')
+              .then(response => response.text())
+              .then(data => {
+                  document.getElementById('navbar-placeholder').innerHTML = data;
+              });
+      });
+      </script>
 </body>
 </html>
