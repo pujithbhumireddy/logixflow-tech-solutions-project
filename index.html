@@ -7,7 +7,7 @@
     <title>Logixflow Landing Page</title>
     <link rel="shortcut icon" href="resources/favicon.png" type="image/x-icon"/>
     <link rel="stylesheet" href="navbar.css">
-    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="footer.css">
 </head>
 <body>
@@ -24,7 +24,7 @@
         <div class="nav-menu-custom" id="nav-menu">
             <ul class="nav-list-custom">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="#">About</a></li>
+                <li><a href="#about-us">About</a></li>
                 <li class="nav-item-dropdown-custom">
                     <a href="#" class="dropdown-trigger">Services ▼</a>
                     <ul class="dropdown-menu-custom">
@@ -57,6 +57,45 @@
             <div class="bg-image" style="background-image: url('resources/backgroundimages/analytics.jpg')"></div>
         </div>
     </div>
+
+    <!-- Industry Cards Section -->
+<div class="industry-cards animate-on-scroll fade-in">
+    <h1 class="animate-on-scroll slide-in-left">Industries We Serve</h1>
+    <p class="animate-on-scroll slide-in-right">Our solutions are versatile and can be adapted for a range of industries, including:</p>
+    <div class="industry-grid">
+        <div class="industry-card animate-on-scroll scale-in">
+            <div class="industry-icon">
+                <img src="resources/e-commerce.svg" alt="E-Commerce Icon">
+            </div>
+            <h3>E-Commerce</h3>
+            <p>Digital solutions to enhance online retail experiences and streamline operations.</p>
+        </div>
+        
+        <div class="industry-card animate-on-scroll scale-in">
+            <div class="industry-icon">
+                <img src="resources/pharmacymachinary.png" alt="pharmaceutical Icon">
+            </div>
+            <h3>Pharmaceutical</h3>
+            <p>Specialized machinery and equipment solutions for pharmaceutical manufacturing, including advanced filtration systems.</p>
+        </div>
+        
+        <div class="industry-card animate-on-scroll scale-in">
+            <div class="industry-icon">
+                <img src="resources/digital-exchange.png" alt="Finance Icon">
+            </div>
+            <h3>Finance</h3>
+            <p>Secure and efficient solutions for financial operations and transactions.</p>
+        </div>
+        
+        <div class="industry-card animate-on-scroll scale-in">
+            <div class="industry-icon">
+                <img src="resources/manufacturing.png" alt="Manufacturing Icon">
+            </div>
+            <h3>Manufacturing</h3>
+            <p>Optimized processes and systems for modern manufacturing needs.</p>
+        </div>
+    </div>
+</div>
 
     <div class="cursors">
         <div class="cursor animate-on-scroll scale-in">
@@ -92,7 +131,7 @@
     </div>
     
     <!-- About Us Section -->
-    <div class="about-us-section animate-on-scroll fade-in">
+    <div id="about-us" class="about-us-section animate-on-scroll fade-in">
         <div class="about-us-content">
             <div class="about-us-image">
                 <img src="resources/backgroundimages/developers.jpg" alt="About Us Image" />

@@ -9,8 +9,8 @@
     <link rel="stylesheet" href="footer.css">
 </head>
 <body>
-<!-- Navbar will be included here -->
-<nav class="navbar-custom">
+   <!-- Navbar will be included here -->
+   <nav class="navbar-custom">
     <div class="navbar-brand-custom">
         <a href="#"><img src="resources/companylogo.jpeg" alt="Logixflow Logo"></a>
     </div>
@@ -22,7 +22,7 @@
     <div class="nav-menu-custom" id="nav-menu">
         <ul class="nav-list-custom">
             <li><a href="index.html">Home</a></li>
-            <li><a href="#">About</a></li>
+            <li><a href="#about-us">About</a></li>
             <li class="nav-item-dropdown-custom">
                 <a href="#" class="dropdown-trigger">Services ▼</a>
                 <ul class="dropdown-menu-custom">
@@ -35,6 +35,7 @@
         </ul>
     </div>
 </nav>
+
 
     <div class="hero-section">
         <div class="hero-overlay">
@@ -63,23 +64,83 @@
     <div class="container">
         <section class="job-listing">
             <h2>Open Positions</h2>
-            <div class="job">
-                <h3>Software Engineer</h3>
-                <p>Location: San Francisco, CA</p>
-                <p>Responsibilities include developing high-quality software solutions, collaborating with cross-functional teams, and more.</p>
-                <button>Apply Now</button>
+
+            <!-- Business Management -->
+            <div class="category">
+                <h3>Business Management</h3>
+                <div class="job-card" onclick="toggleDetails(this)">
+                    <div class="job-header">
+                        <h4>Business Development Executive</h4>
+                        <p>Hyderabad, India</p>
+                    </div>
+                    <div class="job-details hidden">
+                        <p><strong>Responsibilities:</strong> Manage client relations, develop business strategies, and identify new market opportunities.</p>
+                        <p><strong>Requirements:</strong> 3+ years in business development, strong communication skills.</p>
+                    </div>
+                </div>
             </div>
-            <div class="job">
-                <h3>Product Manager</h3>
-                <p>Location: New York, NY</p>
-                <p>Responsibilities include overseeing product development, managing product lifecycle, and more.</p>
-                <button>Apply Now</button>
+
+            <!-- IT Services -->
+            <div class="category">
+                <h3>IT Services</h3>
+                <div class="job-card" onclick="toggleDetails(this)">
+                    <div class="job-header">
+                        <h4>Oracle CPQ Developer</h4>
+                        <p>Hyderabad, India</p>
+                    </div>
+                    <div class="job-details hidden">
+                        <p><strong>Responsibilities:</strong> Customize and implement Oracle CPQ solutions.</p>
+                        <p><strong>Requirements:</strong> Experience with Oracle CPQ and related tools.</p>
+                    </div>
+                </div>
+
+                <div class="job-card" onclick="toggleDetails(this)">
+                    <div class="job-header">
+                        <h4>Oracle OIC Developer</h4>
+                        <p>Hyderabad, India</p>
+                    </div>
+                    <div class="job-details hidden">
+                        <p><strong>Responsibilities:</strong> Develop integration solutions using Oracle Integration Cloud (OIC).</p>
+                        <p><strong>Requirements:</strong> Hands-on experience with OIC integrations.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Technology -->
+            <div class="category">
+                <h3>Technology</h3>
+                <div class="job-card" onclick="toggleDetails(this)">
+                    <div class="job-header">
+                        <h4>.NET Full Stack Developer</h4>
+                        <p>Hyderabad, India</p>
+                    </div>
+                    <div class="job-details hidden">
+                        <p><strong>Responsibilities:</strong> Develop front-end and back-end systems using .NET technologies.</p>
+                        <p><strong>Requirements:</strong> Proficiency in .NET Core, Angular, and SQL.</p>
+                    </div>
+                </div>
+
+                <div class="job-card" onclick="toggleDetails(this)">
+                    <div class="job-header">
+                        <h4>Azure DBA</h4>
+                        <p>Hyderabad, India</p>
+                    </div>
+                    <div class="job-details hidden">
+                        <p><strong>Responsibilities:</strong> Manage Azure database services and ensure data security.</p>
+                        <p><strong>Requirements:</strong> Experience with Azure SQL and database optimization.</p>
+                    </div>
+                </div>
             </div>
         </section>
     </div>
-
     <div id="footer-placeholder"></div>
     <script src="navbar.js"></script>
     <script src="index.js"></script>
+    <script>
+        function toggleDetails(card) {
+            const details = card.querySelector(".job-details");
+            details.classList.toggle("hidden");
+        }
+    </script>
 </body>
 </html>
