@@ -106,6 +106,41 @@
     background-color: #c4c4c4;
 }
 
+.get-in-touch {
+    margin-top: 20px;
+}
+
+.get-in-touch h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+#get-in-touch-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#get-in-touch-form input,
+#get-in-touch-form button {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#get-in-touch-form button {
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+}
+
+#get-in-touch-form button:hover {
+    background-color: #0056b3;
+}
+
 /* Media Queries */
 @media (min-width: 600px) {
     .footer {
