@@ -165,3 +165,7 @@
         transform: translateY(-8px) rotate(-45deg);
     }
 }
+
+body {
+    font-family: 'Manrope', Arial, sans-serif; /* Consistent font */
+}

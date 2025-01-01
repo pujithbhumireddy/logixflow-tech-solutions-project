@@ -5,7 +5,7 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Manrope', Arial, sans-serif; /* Consistent font */
     background-color: #f0f2f5;
     color: #333;
     overflow-x: hidden;
@@ -44,7 +44,7 @@ body::-webkit-scrollbar {
 }
 
 h1 {
-    font-size: clamp(2rem, 5vw, 2.5rem); /* Adjust font size */
+    font-size: clamp(2rem, 6vw, 2.5rem) !important; /* Ensure increased font size with !important */
     margin-bottom: 0.5rem; /* Adjust margin */
     font-weight: bold;
     color: #1E90FF;
@@ -122,6 +122,7 @@ p {
 }
 
 .industry-cards h1 {
+    font-size: clamp(2.5rem, 5vw, 3rem) !important; /* Ensure increased font size with !important */
     color: #1E90FF;
     margin-bottom: 1rem;
 }
@@ -145,7 +146,8 @@ p {
     background: #f9f9f9;
     border-radius: 10px;
     padding: 30px;
-    text-align: center;
+    text-align: left;
+    line-height: 1.6;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
@@ -168,17 +170,17 @@ p {
 }
 
 .industry-card h3 {
-    color: #333;
-    font-size: 1.5rem;
-    margin-bottom: 15px;
+    font-size: 1.25rem; /* Decreased font size */
+    margin-bottom: 10px; /* Adjusted margin */
+    text-align: center; /* Center align text */
 }
 
 .industry-card p {
-    color: #666;
-    font-size: 1rem;
-    line-height: 1.5;
+    font-size: 0.875rem; /* Decreased font size */
+    line-height: 1.4; /* Adjusted line height */
+    text-align: center; /* Center align text */
+    color: #555;
 }
-
 
 /* Rest of the styles */
 .cursors {
@@ -360,6 +362,7 @@ p {
     padding: 20px;
     border-radius: 10px;
     text-align: left;
+    line-height: 1.6;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     max-width: 300px;
     flex: 1 1 calc(33.333% - 40px);
@@ -400,19 +403,15 @@ p {
 }
 
 .service-item h2 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-    color: #333;
-    z-index: 1;
-    position: relative;
+    font-size: 1.25rem; /* Decreased font size */
+    margin-bottom: 10px; /* Adjusted margin */
+    text-align: center; /* Center align text */
 }
 
 .service-item p {
-    font-size: 1.25rem;
-    color: #555;
-    margin-bottom: 20px;
-    z-index: 1;
-    position: relative;
+    font-size: 0.875rem; /* Decreased font size */
+    line-height: 1.4; /* Adjusted line height */
+    text-align: center; /* Center align text */
 }
 
 .service-item:hover h2,
@@ -714,4 +713,9 @@ p {
 
 .scale-in {
     animation: scaleIn 1s ease-in-out forwards;
+}
+
+/* Adjust text sizes for all views */
+h1, h2, h3, h4, h5, h6, p, ul, li {
+    font-size: clamp(1rem, 1.5vw, 1.2rem); /* Adjusted font size */
 }

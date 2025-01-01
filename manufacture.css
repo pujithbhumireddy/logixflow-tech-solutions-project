@@ -5,7 +5,7 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Manrope', Arial, sans-serif; /* Consistent font */
     background-color: #f0f2f5;
     color: #333;
     overflow-x: hidden;
@@ -126,6 +126,8 @@ body::-webkit-scrollbar {
     display: flex;
     flex-direction: column;
     position: relative;
+    text-align: left;
+    line-height: 1.6;
 }
 
 .machine-card:nth-child(1) { animation-delay: 0.2s; }
@@ -402,4 +404,9 @@ body::-webkit-scrollbar {
         width: 120px;
         height: 90px;
     }
+}
+
+/* Adjust text sizes for all views */
+h1, h2, h3, h4, h5, h6, p, ul, li {
+    font-size: clamp(1rem, 1.5vw, 1.2rem); /* Adjusted font size */
 }

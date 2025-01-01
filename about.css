@@ -115,6 +115,8 @@ body {
     width: calc(33.33% - 2rem);
     max-width: 350px;
     animation: scaleIn 0.5s ease-out;
+    text-align: left;
+    line-height: 1.6;
 }
 
 .card:hover {
@@ -189,6 +191,8 @@ body {
     box-shadow: var(--card-shadow);
     transition: transform 0.4s ease, box-shadow 0.4s ease;
     animation: fadeIn 0.8s ease-out;
+    text-align: left;
+    line-height: 1.6;
 }
 
 .feature:hover {

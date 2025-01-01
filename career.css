@@ -1,19 +1,4 @@
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-@keyframes slideIn {
-    from {
-        transform: translateY(50px);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
+/* Base styles with navbar fix */
 * {
     margin: 0;
     padding: 0;
@@ -21,27 +6,21 @@
 }
 
 body {
-    font-family: 'Segoe UI', Arial, sans-serif;
+    font-family: 'Manrope', Arial, sans-serif; /* Consistent font */
     background-color: #f8f9fa;
     color: #2c3e50;
     overflow-x: hidden;
     margin: 0;
-    padding-top: 40px;
+    padding-top: 60px; /* Increased padding for navbar */
     line-height: 1.6;
 }
 
-/* Hide scroll bar for Webkit browsers */
-body::-webkit-scrollbar {
-    width: 0;
-    height: 0;
-}
-
+/* Hero section */
 .hero-section {
     position: relative;
     height: 85vh;
     background: url('resources/jobinterview.png') no-repeat center center;
     background-size: cover;
-    animation: fadeIn 1.5s ease-out;
 }
 
 .hero-overlay {
@@ -54,56 +33,58 @@ body::-webkit-scrollbar {
     padding: 0 2rem;
 }
 
-.hero-section h1 {
+.hero-overlay h1 {
     color: #ffffff;
-    font-size: clamp(2rem, 5vw, 4.5rem);
-    animation: slideIn 1s ease-out;
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    text-align: center; /* Center text on all devices */
+    text-align: center;
 }
 
+/* Intro section */
 .intro-section {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: clamp(1rem, 4vw, 4rem);
-    margin: 0 clamp(1rem, 15vw, 300px);
-    animation: fadeIn 1s ease-out;
-    flex-wrap: wrap; /* Ensure proper wrapping on smaller screens */
+    padding: clamp(2rem, 4vw, 4rem);
+    max-width: 1440px;
+    margin: 0 auto;
+    gap: 2rem;
 }
 
 .intro-text {
     flex: 1;
     padding: clamp(1rem, 2vw, 2rem);
-    margin-right: clamp(1rem, 3vw, 3rem);
 }
 
 .intro-text strong {
     display: block;
-    font-size: clamp(1.4rem, 3vw, 2rem);
+    font-size: clamp(1.4rem, 2vw, 1.8rem); /* Adjusted font size */
     margin-bottom: 1.5rem;
     color: #1a237e;
+    line-height: 1.4;
+    text-align: justify;
 }
 
 .intro-text .light-text {
-    font-size: clamp(1rem, 1.5vw, 1.2rem);
+    font-size: clamp(1rem, 1.2vw, 1.1rem); /* Adjusted font size */
     color: #546e7a;
     line-height: 1.8;
+    text-align: justify;
 }
 
 .intro-image {
-    flex: 0 0 clamp(200px, 30vw, 300px);
+    flex: 0 0 clamp(250px, 30vw, 350px);
     padding: 1rem;
 }
 
 .intro-image img {
-    width: 100%; /* Ensure the image scales correctly */
+    width: 100%;
     height: auto;
     border-radius: 10px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease;
 }
 
+/* Work environment section */
 .work-environment-section {
     position: relative;
     padding: clamp(3rem, 6vw, 6rem);
@@ -112,71 +93,85 @@ body::-webkit-scrollbar {
     margin: 4rem 0;
 }
 
+.work-environment-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Decrease brightness of background */
+    z-index: 0;
+}
+
 .work-environment-overlay {
     color: #ffffff;
-    padding: clamp(1.5rem, 3vw, 3rem);
-    text-align: center;
-    max-width: 900px;
+    padding: clamp(2rem, 3vw, 3rem);
+    max-width: 1000px;
     margin: 0 auto;
     position: relative;
     z-index: 1;
+    text-align: center; /* Center align text */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9); /* Increase text brightness */
 }
 
 .work-environment-overlay h2 {
-    font-size: clamp(1.6rem, 4vw, 2.5rem);
+    font-size: clamp(2rem, 3.5vw, 3rem); /* Adjusted font size */
     margin-bottom: 2rem;
     color: #4fc3f7;
 }
 
 .work-environment-overlay p {
-    font-size: clamp(1rem, 2vw, 1.3rem);
+    font-size: clamp(1.1rem, 1.5vw, 1.3rem); /* Adjusted font size */
     margin-bottom: 2rem;
     line-height: 1.8;
 }
 
-/* New styles for contact info - now red for all devices */
-.work-environment-overlay p.contact-info strong {
-    color: #ff3c00;
-    font-size: clamp(1.2rem, 4vw, 2rem);
-    line-height: 1.5;
+.contact-info {
+    text-align: center;
 }
 
+.contact-info strong {
+    color: #ff3c00;
+    font-size: clamp(1.2rem, 1.8vw, 1.6rem); /* Adjusted font size */
+    line-height: 1.5;
+    display: block;
+}
+
+/* Job listings section */
 .container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Dynamic columns based on available space */
-    gap: 1.5rem; /* Space between grid items */
     max-width: 1200px;
     margin: 2rem auto;
-    padding: 1rem;
+    padding: 1.5rem;
     background-color: #ffffff;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .job-listing {
-    margin: 1rem;
+    margin: 1.5rem;
 }
 
-h2 {
-    font-size: 2rem;
+.job-listing h2 {
+    font-size: clamp(1.6rem, 2.2vw, 2.2rem); /* Adjusted font size */
     color: #333;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
 }
 
 .category h3 {
-    font-size: 1.5rem;
+    font-size: clamp(1.2rem, 1.8vw, 1.6rem); /* Adjusted font size */
     color: #555;
-    margin: 1.5rem 0 0.5rem;
+    margin: 2rem 0 1rem;
 }
 
 .job-card {
     border: 1px solid #ddd;
     border-radius: 8px;
-    margin-bottom: 1rem;
-    padding: 1rem;
+    margin-bottom: 1.5rem;
+    padding: 1.5rem;
     background-color: #f9f9f9;
     cursor: pointer;
-    transition: box-shadow 0.3s;
+    transition: box-shadow 0.3s ease;
+    text-align: left;
+    line-height: 1.6;
 }
 
 .job-card:hover {
@@ -184,175 +179,106 @@ h2 {
 }
 
 .job-header h4 {
-    font-size: 1.25rem;
+    font-size: clamp(1.1rem, 1.4vw, 1.3rem); /* Adjusted font size */
     color: #1a237e;
     margin: 0;
 }
 
 .job-header p {
-    font-size: 1rem;
+    font-size: clamp(0.8rem, 1.1vw, 1rem); /* Adjusted font size */
     color: #555;
     margin: 0.5rem 0;
 }
 
 .job-details {
-    margin-top: 1rem;
-    font-size: 0.95rem;
+    margin-top: 1.5rem;
+    font-size: clamp(0.9rem, 1vw, 0.95rem); /* Adjusted font size */
     color: #333;
-    line-height: 1.5;
+    line-height: 1.6;
 }
 
-/* Style for unordered lists */
+.job-details p {
+    text-align: justify;
+    margin-bottom: 1rem;
+}
+
 .job-details ul {
     list-style-type: disc;
-    padding-left: 20px;
-    margin: 10px 0;
+    padding-left: 1.5rem;
+    margin: 1rem 0;
 }
 
-/* Style for ordered lists */
 .job-details ol {
     list-style-type: decimal;
-    padding-left: 20px;
-    margin: 10px 0;
+    padding-left: 1.5rem;
+    margin: 1rem 0;
 }
 
-/* Style for list items */
 .job-details ul li,
 .job-details ol li {
-    margin-bottom: 5px;
+    margin-bottom: 0.5rem;
+    text-align: justify;
+    padding-left: 0.5rem;
 }
 
 .hidden {
     display: none;
 }
 
+/* Responsive adjustments */
 @media (max-width: 768px) {
     .intro-section {
         flex-direction: column;
-        padding: 1rem;
-        margin: 0 1rem; /* Adjust margin to prevent overflow */
+        padding: 2rem 1rem;
     }
 
     .intro-image {
         display: none;
     }
 
-    .intro-text {
-        margin-right: 0;
-    }
-
-    .hero-overlay {
-        justify-content: center;
-        text-align: center;
-        padding: 0 1rem; /* Adjust padding to prevent overflow */
-    }
-
-    .hero-section h1 {
-        margin-left: 0;
-    }
-
     .container {
-        width: 95%;
+        margin: 1rem;
         padding: 1rem;
     }
 
-    button {
-        width: 100%;
-        max-width: 300px;
-        margin-top: 1rem;
+    .work-environment-overlay {
+        padding: 1.5rem;
+    }
+
+    .job-card {
+        padding: 1rem;
+        margin: 1rem 0; /* Adjust margin to prevent overflow */
+        width: calc(100% - 2rem); /* Ensure job cards take full width with padding */
     }
 }
 
 @media (max-width: 480px) {
+    body {
+        padding-top: 50px;
+    }
+
     .hero-section {
-        height: 50vh;
+        height: 60vh;
     }
 
-    .hero-section h1 {
-        font-size: clamp(1.8rem, 5vw, 2.5rem);
+    .hero-overlay h1 {
+        font-size: clamp(2rem, 4vw, 2.5rem);
     }
 
-    .work-environment-overlay p.contact-info {
-        padding: 0 1rem;
-    }
-
-    .job {
+    .intro-section,
+    .work-environment-section,
+    .work-environment-overlay {
         padding: 1rem;
     }
 
     .container {
-        width: 95%;
-        padding: 1rem;
+        margin: 0.5rem;
+        padding: 0.5rem;
     }
 
-    .intro-section {
-        margin: 0 1rem; /* Adjust margin to prevent overflow */
+    .job-card {
+        padding: 0.5rem;
+        margin: 0.5rem 0; /* Adjust margin to prevent overflow */
+        width: calc(100% - 1rem); /* Ensure job cards take full width with padding */
     }
-
-    .intro-text {
-        padding: 1rem;
-        margin-right: 0;
-    }
-}
-
-/* Keyframes for fade-in animation */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Keyframes for slide-in-left animation */
-@keyframes slideInLeft {
-    from {
-        transform: translateX(-100%);
-        opacity: 0;
-    }
-    to {
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
-
-/* Keyframes for slide-in-right animation */
-@keyframes slideInRight {
-    from {
-        transform: translateX(100%);
-        opacity: 0;
-    }
-    to {
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
-
-/* Applying animations to elements */
-.animate-on-scroll {
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-}
-
-.in-view {
-    opacity: 1;
-}
-
-.fade-in {
-    animation: fadeIn 1s ease-in-out forwards;
-}
-
-.slide-in-left {
-    animation: slideInLeft 1s ease-in-out forwards;
-}
-
-.slide-in-right {
-    animation: slideInRight 1.5s ease-in-out forwards;
-}
-
-.scale-in {
-    animation: scaleIn 1s ease-in-out forwards;
 }

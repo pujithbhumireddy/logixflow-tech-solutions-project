@@ -19,6 +19,10 @@
     animation: none;
 }
 
+body {
+    font-family: 'Manrope', Arial, sans-serif; /* Consistent font */
+}
+
 .footer {
     display: flex;
     flex-direction: column;
