@@ -1,8 +1,8 @@
 /* Reset specific footer styles to prevent inheritance */
 .footer-container {
-    background-color: #c4c4c4;
+    background-color: #f1f1f1;
     color: black;
-    padding: 20px;
+    padding: 20px 0;
     font-family: Arial, sans-serif;
     margin: 0;
     width: 100%;
@@ -25,6 +25,8 @@ body {
 
 .footer {
     display: flex;
+    justify-content: space-between;
+    padding: 20px;
     flex-direction: column;
     margin: 0 auto;
     max-width: 1200px;
@@ -47,6 +49,7 @@ body {
 
 .footer-left,
 .footer-right {
+    flex: 1;
     width: 100%;
     margin-bottom: 20px;
     padding: 0;
@@ -59,12 +62,16 @@ body {
 }
 
 .footer-logo img {
-    width: auto;
-    height: 100px;
-    max-width: 100%;
+    width: auto; /* Allow the image to maintain its aspect ratio */
+    height: 100px; /* Set a fixed height */
+    max-width: 100%; /* Ensure the image does not exceed the container width */
+    object-fit: contain; /* Ensure the image is not stretched or compressed */
 }
 
 .footer-logo-text {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #333;
     margin-top: 15px !important;
     margin-bottom: 15px !important;
 }
@@ -78,12 +85,12 @@ body {
 
 .social-icons a {
     text-decoration: none;
-    margin-right: 15px;  /* Increased margin between links */
+    margin-right: 10px;
 }
 
 .social-icons img {
-    width: 30px;  /* Increased from 20px to 30px */
-    height: 30px;  /* Increased from 20px to 30px */
+    width: 24px;
+    height: 24px;
     transition: transform 0.3s ease;
 }
 
@@ -97,11 +104,49 @@ body {
 }
 
 .contact-info p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #333;
     margin: 8px 0 !important;
+}
+
+.footer-subscribe {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.footer-subscribe form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-subscribe input[type="email"] {
+    padding: 10px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    flex: 1;
+}
+
+.footer-subscribe button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.footer-subscribe button:hover {
+    background-color: #0056b3;
 }
 
 .copyright {
     text-align: center;
+    margin-top: 20px;
+    font-size: 12px;
+    color: #777;
     font-size: 16px !important;
     color: #666 !important;
     margin-top: 20px;

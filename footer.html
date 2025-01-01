@@ -28,13 +28,13 @@
         <!-- <p>Phone Number: +91 9493929880</p> -->
         <p>Address: EWS-16th Floor, Manjeera Trinity Corporate, JNTU - Hitech City Road, Opp. JNTU, Kukatpally Housing Board Colony, Kukatpally, Hyderabad, Telangana 500072</p>
       </div>
-      <!-- <div class="get-in-touch">
+      <div class="footer-subscribe">
         <h3>Get in Touch</h3>
-        <form id="subscribe-form" action="/subscribe" method="POST">
-          <input type="email" id="email-input" name="email" placeholder="Enter your email" required>
+        <form id="subscribe-form" onsubmit="event.preventDefault(); subscribe();">
+          <input type="email" id="subscribe-email" name="email" placeholder="Enter your email" required>
           <button type="submit">Subscribe</button>
         </form>
-      </div> -->
+      </div>
     </div>
   </div>
 
@@ -44,6 +44,7 @@
 </div>
 
 <script src="server.js"></script>
+<script src="subscribe.js"></script>
 
 </body>
 </html>
