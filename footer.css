@@ -1,243 +1,98 @@
-/* Reset specific footer styles to prevent inheritance */
+.footer-custom {
+    background: linear-gradient(180deg, #f5f7fa, #e8ecef);
+    color: #333;
+    padding: 60px 0 20px;
+    font-family: 'Manrope', sans-serif;
+}
+
 .footer-container {
-    background-color: #f1f1f1;
-    color: black;
-    padding: 20px 0;
-    font-family: Arial, sans-serif;
-    margin: 0;
-    width: 100%;
-    box-sizing: border-box;
-}
-
-.footer-container * {
-    box-sizing: border-box;
-}
-
-/* Override any inherited animations */
-.footer-container,
-.footer-container * {
-    animation: none;
-}
-
-body {
-    font-family: 'Manrope', Arial, sans-serif; /* Consistent font */
-}
-
-.footer {
-    display: flex;
-    justify-content: space-between;
-    padding: 20px;
-    flex-direction: column;
-    margin: 0 auto;
     max-width: 1200px;
-    width: 100%;
-    padding: 0 15px;
-}
-
-/* Reset footer text styles */
-.footer p,
-.footer-logo-text {
-    color: #000000 !important;
-    font-size: 17px !important;
-    margin: 5px 0 !important;
-    animation: none !important;
-    font-weight: normal !important;
-    text-align: left !important;
-    padding: 0 !important;
-    line-height: 1.5 !important;
-}
-
-.footer-left,
-.footer-right {
-    flex: 1;
-    width: 100%;
-    margin-bottom: 20px;
-    padding: 0;
-}
-
-.footer-logo {
+    margin: 0 auto;
     display: flex;
-    justify-content: flex-start;
-    margin-bottom: 10px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.footer-left, .footer-right {
+    flex: 1;
+    min-width: 300px;
+    margin-bottom: 40px;
 }
 
 .footer-logo img {
-    width: auto; /* Allow the image to maintain its aspect ratio */
-    height: auto; /* Adjust height to maintain aspect ratio */
-    max-width: 250px; /* Increase the maximum width */
-    max-height: 200px; /* Increase the maximum height */
-    object-fit: contain; /* Ensure the image is not stretched or compressed */
+    max-width: 220px;
+    height: auto;
+    margin-bottom: 20px;
 }
 
-.footer-logo-text {
-    /* margin-top: 10px; */
-    font-size: 14px;
-    color: #333;
-    margin-top: 15px !important;
-    margin-bottom: 15px !important;
+.footer-description {
+    font-size: 1rem;
+    line-height: 1.6;
+    max-width: 400px;
+    color: #555;
+    text-align: justify;
 }
 
 .social-icons {
     display: flex;
-    margin-top: 15px;  /* Increased margin-top for better spacing */
-    justify-content: flex-start;
-    gap: 15px;  /* Increased gap between icons */
+    gap: 15px;
+    margin-top: 20px;
 }
 
 .social-icons a {
-    text-decoration: none;
-    margin-right: 10px;
-}
-
-.social-icons img {
-    width: 24px;
-    height: 24px;
     transition: transform 0.3s ease;
 }
 
-.social-icons img:hover {
-    transform: scale(1.1);
+.social-icons a:hover {
+    transform: scale(1.2);
 }
 
-.contact-info {
-    font-size: 17px !important;
-    color: #0a0a0a !important;
+.social-icons img {
+    width: 30px;
+    height: 30px;
+}
+
+.contact-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #2E7D32;
 }
 
 .contact-info p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #555;
     margin: 5px 0;
-    font-size: 14px;
-    color: #333;
-    margin: 8px 0 !important;
-}
-
-.footer-subscribe {
-    margin-top: 20px;
-    text-align: center;
-}
-
-.footer-subscribe form {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.footer-subscribe input[type="email"] {
-    padding: 10px;
-    margin-right: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    flex: 1;
-}
-
-.footer-subscribe button {
-    padding: 10px 20px;
-    background-color: #007BFF;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-.footer-subscribe button:hover {
-    background-color: #0056b3;
 }
 
 .copyright {
     text-align: center;
-    margin-top: 20px;
-    font-size: 12px;
-    color: #777;
-    font-size: 16px !important;
-    color: #666 !important;
-    margin-top: 20px;
-    padding: 10px 0;
-    width: 100%;
-    background-color: #c4c4c4;
+    font-size: 0.9rem;
+    color: #666;
+    padding: 20px 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    margin-top: 40px;
 }
 
-.get-in-touch {
-    margin-top: 20px;
-}
-
-.get-in-touch h3 {
-    font-size: 18px;
-    margin-bottom: 10px;
-}
-
-#get-in-touch-form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-#get-in-touch-form input,
-#get-in-touch-form button {
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    width: 100%;
-    box-sizing: border-box;
-}
-
-#get-in-touch-form button {
-    background-color: #007bff;
-    color: white;
-    cursor: pointer;
-}
-
-#get-in-touch-form button:hover {
-    background-color: #0056b3;
-}
-
-/* Media Queries */
-@media (min-width: 600px) {
-    .footer {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: flex-start;
-    }
-
-    .footer-left,
-    .footer-right {
-        width: 45%;
-        margin-bottom: 0;
-    }
-    
-    .footer-logo-text {
-        display: inline-block; /* Ensure the logo text is inline */
-        vertical-align: middle; /* Align vertically with the logo */
-        margin-left: 10px; /* Add some space between the logo and text */
-    }
-
-    .footer-logo {
-        display: flex;
-        align-items: center; /* Align items vertically in the center */
-    }
-
-    .footer-right {
-        align-self: flex-start; /* Align the footer right section to the top */
-        margin-top: 0; /* Remove any top margin */
-    }
-
-    .contact-info {
-        margin-top: 100px;
-    }
-}
-
-@media (max-width: 599px) {
-    .footer {
+@media (max-width: 768px) {
+    .footer-container {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
+        text-align: center;
     }
 
-    .footer-left,
-    .footer-right {
-        width: 100%;
+    .footer-left, .footer-right {
+        min-width: 100%;
     }
 
-    .contact-info {
-        margin-top: 10px;
+    .footer-description {
+        text-align: justify;
+        max-width: 90%;
+        margin: 0 auto;
+    }
+
+    .social-icons {
+        justify-content: center;
     }
 }
