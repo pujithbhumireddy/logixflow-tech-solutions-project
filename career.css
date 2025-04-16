@@ -9,17 +9,18 @@ body {
     background-color: #f9fafb;
     color: #2d3748;
     overflow-x: hidden;
-    padding-top: 80px;
+    padding-top: 60px; /* Adjusted to match fixed navbar height */
     line-height: 1.6;
 }
 
 .hero-section {
     position: relative;
-    min-height: 80vh;
+    height: 100vh; /* Changed to full viewport height */
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
+    overflow: hidden; /* Prevent image overflow */
 }
 
 .hero-background {
@@ -29,7 +30,6 @@ body {
     width: 100%;
     height: 100%;
     z-index: -1;
-    filter: brightness(0.5);
 }
 
 .hero-background .overlay {
@@ -38,21 +38,25 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65));
+    background: rgba(0, 0, 0, 0.9); /* Solid dark overlay for better dimming */
 }
 
 .hero-background .bg-image {
     width: 100%;
     height: 100%;
     background-size: cover;
-    background-position: center;
+    background-position: center; /* Centered to fill the area */
+    background-repeat: no-repeat;
     animation: subtleZoom 20s infinite ease-in-out;
+    filter: brightness(60%);
 }
 
 .hero-content {
     max-width: 800px;
     color: white;
     padding: 20px;
+    z-index: 1; /* Ensure text stays above overlay */
+    position: relative; /* Ensure proper layering */
 }
 
 .hero-content h1 {
@@ -74,10 +78,12 @@ body {
     margin: 60px auto;
     padding: 0 20px;
     gap: 40px;
+    flex-wrap: nowrap; /* Prevent wrapping on desktop */
 }
 
 .intro-content {
     flex: 1;
+    order: 1; /* Ensure text comes first */
 }
 
 .intro-content h2 {
@@ -94,6 +100,7 @@ body {
 
 .intro-image {
     flex: 1;
+    order: 2; /* Ensure image comes second */
 }
 
 .intro-image img {
@@ -185,18 +192,21 @@ body {
     align-items: center;
     justify-content: space-between;
     gap: 20px;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
 }
 
 .job-header h4 {
     font-size: 1.3rem;
     color: #2d3748;
     margin: 0;
+    flex: 1; /* Allow title to take available space */
 }
 
 .job-header p {
     font-size: 1rem;
     color: #718096;
     margin: 0;
+    white-space: nowrap; /* Prevent location text from wrapping */
 }
 
 .toggle-button {
@@ -291,7 +301,7 @@ body {
     }
 
     .intro-image {
-        display: none;
+        display: none; /* Hide image on mobile as per original design */
     }
 
     .work-environment-section {
@@ -301,6 +311,14 @@ body {
     .job-header {
         flex-direction: column;
         align-items: flex-start;
+    }
+
+    .job-header h4 {
+        flex: none; /* Reset flex on mobile */
+    }
+
+    .job-header p {
+        margin-top: 5px; /* Add spacing between title and location on mobile */
     }
 
     .toggle-button {

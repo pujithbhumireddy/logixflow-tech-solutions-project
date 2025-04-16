@@ -1,26 +1,38 @@
-<nav class="navbar-custom">
-    <div class="navbar-brand-custom">
-        <a href="index.html"><img src="resources/company-logo.png" alt="Logixflow Tech Solutions Logo" class="company-logo"></a>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/navbar.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">
+      <div class="logo-text"><img src="/resources/company-logo.png" alt="" srcset=""></div>
     </div>
-    <button class="navbar-toggle-custom" id="mobile-menu" aria-label="Toggle Menu" aria-expanded="false" aria-controls="nav-menu">
-        <span class="bar-custom"></span>
-        <span class="bar-custom"></span>
-        <span class="bar-custom"></span>
-    </button>
-    <div class="nav-menu-custom" id="nav-menu">
-        <ul class="nav-list-custom">
-            <li><a href="index.html" aria-current="page">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li class="nav-item-dropdown-custom">
-                <button class="dropdown-trigger" aria-expanded="false" type="button">Services ▼</button>
-                <ul class="dropdown-menu-custom">
-                    <li><a href="mobile-app-development.html">Mobile App Development</a></li>
-                    <li><a href="data-management.html">Data Management</a></li>
-                    <li><a href="cloud-services.html">Cloud Services</a></li>
-                    <li><a href="cybersecurity.html">Cybersecurity Solutions</a></li>
-                </ul>
-            </li>
-            <li><a href="career.html">Careers</a></li>
-        </ul>
+    
+    <ul class="nav-links" id="navLinks">
+      <li><a href="/index.html">Home</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li class="dropdown">
+        <a href="#" class="dropbtn">Services <span class="dropdown-indicator">▼</span></a>
+        <div class="dropdown-content">
+          <a href="/mobile-app-development.html">Mobile App Development</a>
+          <a href="/data-management.html">Data Management</a>
+          <a href="/cloud-services.html">Cloud Services</a>
+          <a href="/cybersecurity.html">Cybersecurity</a>
+        </div>
+      </li>
+      <li><a href="/career.html">Careers</a></li>
+    </ul>
+    
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
-</nav>
+  </nav>
+
+  <script src="script.js"></script>
+</body>
+</html>

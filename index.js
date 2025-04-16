@@ -1,175 +1,74 @@
-document.addEventListener("DOMContentLoaded", function () {
-    // Debounce function to prevent rapid toggling
-    function debounce(func, wait) {
-        let timeout;
-        return function executedFunction(...args) {
-            const later = () => {
-                clearTimeout(timeout);
-                func(...args);
-            };
-            clearTimeout(timeout);
-            timeout = setTimeout(later, wait);
-        };
-    }
-
-    // Initialize navbar events
-    function initNavbarEvents() {
-        const mobileMenu = document.getElementById('mobile-menu');
-        const navMenu = document.getElementById('nav-menu');
-        const dropdownItems = document.querySelectorAll('.nav-item-dropdown-custom');
-
-        if (!mobileMenu || !navMenu) {
-            console.warn('Navbar elements not found; retrying in 100ms');
-            setTimeout(initNavbarEvents, 100);
-            return;
-        }
-
-        const toggleMenu = debounce(() => {
-            mobileMenu.classList.toggle('active');
-            navMenu.classList.toggle('active');
-            mobileMenu.setAttribute('aria-expanded', navMenu.classList.contains('active'));
-        }, 100);
-
-        mobileMenu.addEventListener('click', toggleMenu);
-        mobileMenu.addEventListener('touchstart', (e) => {
-            e.preventDefault();
-            toggleMenu();
-        });
-
-        // Handle dropdown menus in mobile view
-        dropdownItems.forEach(item => {
-            const dropdownTrigger = item.querySelector('.dropdown-trigger');
-            if (dropdownTrigger) {
-                const toggleDropdown = (e) => {
-                    if (window.innerWidth <= 768) {
-                        e.preventDefault();
-                        item.classList.toggle('active');
-                        dropdownTrigger.setAttribute('aria-expanded', item.classList.contains('active'));
-                        // Reset styles to prevent alignment shifts
-                        const dropdownMenu = item.querySelector('.dropdown-menu-custom');
-                        if (dropdownMenu) {
-                            dropdownMenu.style.margin = '0';
-                            dropdownMenu.style.padding = '0';
-                            dropdownMenu.style.display = item.classList.contains('active') ? 'flex' : 'none';
-                        }
-                    }
-                };
-                dropdownTrigger.addEventListener('click', toggleDropdown);
-                dropdownTrigger.addEventListener('touchstart', (e) => {
-                    e.preventDefault();
-                    toggleDropdown(e);
-                });
-            }
-        });
-
-        // Close menu when clicking/tapping outside
-        const closeMenuOnOutside = (e) => {
-            if (navMenu && !navMenu.contains(e.target) && mobileMenu && !mobileMenu.contains(e.target)) {
-                navMenu.classList.remove('active');
-                mobileMenu.classList.remove('active');
-                mobileMenu.setAttribute('aria-expanded', 'false');
-                dropdownItems.forEach(item => {
-                    item.classList.remove('active');
-                    const trigger = item.querySelector('.dropdown-trigger');
-                    if (trigger) trigger.setAttribute('aria-expanded', 'false');
-                });
-            }
-        };
-        document.addEventListener('click', closeMenuOnOutside);
-        document.addEventListener('touchstart', closeMenuOnOutside);
-    }
-
-    // Include navbar HTML
-    function includeNavbar() {
-        const navbarPlaceholder = document.getElementById('navbar-placeholder');
-        if (!navbarPlaceholder) {
-            console.error('Navbar placeholder not found');
-            return;
-        }
-        fetch('navbar.html')
-            .then(response => {
-                if (!response.ok) throw new Error(`HTTP error ${response.status}: Failed to load navbar.html`);
-                return response.text();
-            })
-            .then(data => {
+document.addEventListener('DOMContentLoaded', () => {
+    // Function to load navbar.html into the placeholder
+    fetch('/navbar.html')
+        .then(response => response.text())
+        .then(data => {
+            const navbarPlaceholder = document.getElementById('navbar-placeholder');
+            if (navbarPlaceholder) {
                 navbarPlaceholder.innerHTML = data;
-                initNavbarEvents();
-            })
-            .catch(error => console.error('Error loading navbar:', error.message));
-    }
-
-    // Include footer HTML
-    function includeFooter() {
-        fetch('footer.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('footer-placeholder').innerHTML = data;
-            })
-            .catch(error => console.error('Error loading footer:', error));
-    }
-
-    // Call initialization functions
-    includeNavbar();
-    includeFooter();
-
-    // Handle window resize
-    window.addEventListener('resize', function () {
-        const navMenu = document.getElementById('nav-menu');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const dropdownItems = document.querySelectorAll('.nav-item-dropdown-custom');
-
-        if (window.innerWidth > 768) {
-            if (navMenu) navMenu.classList.remove('active');
-            if (mobileMenu) {
-                mobileMenu.classList.remove('active');
-                mobileMenu.setAttribute('aria-expanded', 'false');
+                initializeNavbar();
             }
-            dropdownItems.forEach(item => {
-                item.classList.remove('active');
-                const trigger = item.querySelector('.dropdown-trigger');
-                if (trigger) trigger.setAttribute('aria-expanded', 'false');
+        })
+        .catch(error => console.error('Error loading navbar:', error));
+
+    // Function to load footer.html into the placeholder
+    fetch('/footer.html')
+        .then(response => response.text())
+        .then(data => {
+            const footerPlaceholder = document.getElementById('footer-placeholder');
+            if (footerPlaceholder) {
+                footerPlaceholder.innerHTML = data;
+            }
+        })
+        .catch(error => console.error('Error loading footer:', error));
+
+    // Function to initialize navbar functionality
+    function initializeNavbar() {
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+
+        if (hamburger && navLinks) {
+            hamburger.addEventListener('click', () => {
+                hamburger.classList.toggle('active');
+                navLinks.classList.toggle('active');
             });
         }
-    });
 
-    // Intersection Observer for animations
-    const options = {
-        root: null,
-        rootMargin: "0px",
-        threshold: 0.1,
+        if (window.innerWidth <= 768) {
+            const dropdowns = document.querySelectorAll('.dropdown');
+            dropdowns.forEach(dropdown => {
+                const dropbtn = dropdown.querySelector('.dropbtn');
+                if (dropbtn) {
+                    dropbtn.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        dropdown.classList.toggle('active');
+                    });
+                }
+            });
+        }
+    }
+
+    // Function to toggle job details
+    window.toggleDetails = function(element) {
+        const jobDetails = element.querySelector('.job-details');
+        const toggleButton = element.querySelector('.toggle-button');
+        if (jobDetails && toggleButton) {
+            jobDetails.classList.toggle('active');
+            element.classList.toggle('active');
+        }
     };
 
-    const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach((entry) => {
+    // Intersection Observer for animate-on-scroll
+    const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.classList.add("in-view");
-                observer.unobserve(entry.target);
+                entry.target.classList.add('in-view');
+                obs.unobserve(entry.target);
             }
         });
-    }, options);
+    }, { threshold: 0.1 });
 
-    const elements = document.querySelectorAll(".animate-on-scroll");
-    elements.forEach((el) => observer.observe(el));
-
-    // Smooth scroll for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            const targetId = this.getAttribute('href');
-            if (targetId !== '#') {
-                e.preventDefault();
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    targetElement.scrollIntoView({ behavior: 'smooth' });
-                }
-            }
-        });
-    });
-
-    // Lazy load images
-    const lazyImages = document.querySelectorAll('img[loading="lazy"]');
-    lazyImages.forEach(img => {
-        img.addEventListener('load', () => {
-            img.classList.add('loaded');
-        });
+    document.querySelectorAll('.animate-on-scroll').forEach(element => {
+        observer.observe(element);
     });
 });
