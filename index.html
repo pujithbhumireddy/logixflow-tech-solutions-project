@@ -42,7 +42,7 @@
     <!-- Stylesheets -->
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="navbar.css">
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="index.css"> <!-- or page-specific CSS -->
     <link rel="stylesheet" href="footer.css">
 
     <!-- Schema.org markup for SEO -->
@@ -112,32 +112,7 @@
 </head>
 <body>
     <header>
-        <nav class="navbar-custom">
-            <div class="navbar-brand-custom">
-                <a href="index.html"><img src="resources/company-logo.png" alt="Logixflow Tech Solutions Logo" class="company-logo"></a>
-            </div>
-            <button class="navbar-toggle-custom" id="mobile-menu" aria-label="Toggle Menu" aria-expanded="false">
-                <span class="bar-custom"></span>
-                <span class="bar-custom"></span>
-                <span class="bar-custom"></span>
-            </button>
-            <div class="nav-menu-custom" id="nav-menu">
-                <ul class="nav-list-custom">
-                    <li><a href="index.html" aria-current="page">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li class="nav-item-dropdown-custom">
-                        <button class="dropdown-trigger" aria-expanded="false" type="button">Services ▼</button>
-                        <ul class="dropdown-menu-custom">
-                            <li><a href="mobile-app-development.html">Mobile App Development</a></li>
-                            <li><a href="data-management.html">Data Management</a></li>
-                            <li><a href="cloud-services.html">Cloud Services</a></li>
-                            <li><a href="cybersecurity.html">Cybersecurity Solutions</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="career.html">Careers</a></li>
-                </ul>
-            </div>
-        </nav>
+        <div id="navbar-placeholder"></div>
     </header>
 
     <main>
@@ -306,11 +281,7 @@
         </section>
     </main>
 
-   
     <div id="footer-placeholder"></div>
     <script src="index.js"></script>
-    <!-- <script src="navbar.js"></script> -->
-
-   
 </body>
 </html>
