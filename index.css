@@ -396,7 +396,7 @@ body {
 
 .carousel-track img:hover {
     transform: scale(1.1);
-    filter: brightness(1.2);
+    filter: brightness(0.8);
 }
 
 @keyframes scroll {
